@@ -74,9 +74,13 @@ TARGET_BOOTANIMATION_HALF_RES := true
 
 # Recovery
 RECOVERY_KERNEL_MODULES += \
-    qpnp-smbcharger-mmi.ko
+    qpnp-smbcharger-mmi.ko \
+    focaltech_0flash_mmi.ko \
+    nova_0flash_mmi.ko
 BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD += \
-    qpnp-smbcharger-mmi.ko
+    qpnp-smbcharger-mmi.ko \
+    focaltech_0flash_mmi.ko \
+    nova_0flash_mmi.ko
 
 # Vendor kernel modules loaded during early-init
 BOARD_VENDOR_KERNEL_MODULES_LOAD := \
@@ -84,6 +88,8 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     stmvl53l1.ko \
     sx933x_sar.ko \
     aw8624.ko \
-    aw8695.ko
+    aw8695.ko \
+    focaltech_0flash_mmi.ko \
+    nova_0flash_mmi.ko
 
 include device/motorola/common/CommonConfig.mk
