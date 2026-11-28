@@ -1,0 +1,35 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libgbp_shim",
+    srcs: ["libgbp_shim.cpp"],
+    shared_libs: [
+        "libgui_vendor",
+        "libutils",
+    ],
+    compile_multilib: "both",
+    vendor: true,
+}
+
+cc_library_shared {
+    name: "libcamera_shim",
+    srcs: ["libcamera_shim.cpp"],
+    compile_multilib: "both",
+    vendor: true,
+}
+
+cc_library_shared {
+    name: "android.frameworks.displayservice@1.0",
+    srcs: ["android.frameworks.displayservice@1.0.cpp"],
+    shared_libs: [
+        "lineage.frameworks.displayservice@1.0",
+        "libhidlbase",
+        "libutils",
+        "libcutils",
+    ],
+    compile_multilib: "both",
+    vendor: true,
+}
