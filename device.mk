@@ -26,14 +26,8 @@ AB_OTA_PARTITIONS += \
     product \
     recovery \
     system \
-    vendor \
-    vbmeta
-
-AB_OTA_POSTINSTALL_CONFIG := \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=erofs \
-    POSTINSTALL_OPTIONAL_system=true
+    vbmeta \
+    vendor
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -90,21 +84,21 @@ PRODUCT_PACKAGES += \
     amogusLineageSDKOverlay \
     amogusSettingsOverlay \
     ravFrameworksOverlay \
+    ravSystemUIOverlay \
     sofiaFrameworksOverlay \
+    sofiaSystemUIOverlay \
     sofiapFrameworksOverlay \
     sofiapSFrameworksOverlay \
-    sofiarFrameworksOverlay \
-    ravSystemUIOverlay \
-    sofiaSystemUIOverlay \
-    sofiapSystemUIOverlay \
     sofiapSSystemUIOverlay \
+    sofiapSystemUIOverlay \
+    sofiarFrameworksOverlay \
     sofiarSystemUIOverlay
 
 # Charging Control
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-## Regulatory
+# Regulatory
 PRODUCT_PACKAGES += \
     XT2041-1RegulatoryOverlay \
     XT2041-3RegulatoryOverlay \
@@ -173,5 +167,5 @@ PRODUCT_COPY_FILES += \
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 
-# include board vendor blobs
+# Include board vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/amogus/amogus-vendor.mk)
